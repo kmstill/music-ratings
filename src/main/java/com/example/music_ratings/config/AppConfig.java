@@ -24,10 +24,10 @@ public class AppConfig {
     private String mongoUri;
 
     @Value("${spotify.client.id}")
-    private static String clientId;
+    private static String spotifyClientId;
 
     @Value("${spotify.client.secret}")
-    private static String clientSecret;
+    private static String spotifyClientSecret;
 
     @Bean
     public MongoClient getMongoClient(){
@@ -42,8 +42,8 @@ public class AppConfig {
     @Bean
     public SpotifyApi getSpotifyApi(){
         final SpotifyApi spotifyApi = new SpotifyApi.Builder()
-                .setClientId(clientId)
-                .setClientSecret(clientSecret)
+                .setClientId(spotifyClientId)
+                .setClientSecret(spotifyClientSecret)
                 .build();
 
         ClientCredentialsRequest clientCredentialsRequest = spotifyApi.clientCredentials().build();

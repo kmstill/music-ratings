@@ -37,8 +37,8 @@ public class SpotifyService {
         GetAlbumRequest getAlbumRequest = spotifyApi.getAlbum("6dVIqQ8qmQ5GBnJ9shOYGE")
                 .build();
         Album album = getAlbumRequest.execute();
-        log.info("Album title: " + album.getName());
-        log.info("Tracks: " + album.getTracks());
+        log.info("Album title: {}", album.getName());
+        log.info("Tracks: {}", album.getTracks());
     }
 
 }
